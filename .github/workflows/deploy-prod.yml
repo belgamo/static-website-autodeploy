@@ -1,0 +1,14 @@
+name: Deploy Staging
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: prod-app
+  cancel-in-progress: true
+
+jobs:
+  deploy-staging:
+    name: Deploy Prod App
+    uses: ./deploy-app.yml
+    secrets: inherit

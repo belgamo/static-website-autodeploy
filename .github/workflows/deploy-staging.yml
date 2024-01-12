@@ -1,0 +1,16 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: staging-app
+  cancel-in-progress: true
+
+jobs:
+  deploy-staging:
+    name: Deploy Staging App
+    uses: ./deploy-app.yml
+    secrets: inherit
