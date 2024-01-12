@@ -10,5 +10,5 @@ concurrency:
 jobs:
   deploy-staging:
     name: Deploy Prod App
-    uses: ./deploy-app.yml
+    uses: ./.github/workflows/deploy-app.yml
     secrets: inherit
